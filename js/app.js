@@ -78,17 +78,30 @@ function addOperation() {
     updateLocalStorage();
     populateHistory();
     balanceUpdate();
+    updateId();
   }
 }
+
+function deleteItem(e) {
+  console.log(e);
+}
+
+function updateId() {
+  localStorage.setItem('id', JSON.stringify(id));
+}
+
+let id =
+  localStorage.getItem('id') !== null
+    ? Number(JSON.parse(localStorage.getItem('id')))
+    : 1;
 
 balanceUpdate();
 populateHistory();
 
 // Constructor for each operation
 class Operation {
-  static id = 1;
   constructor(description, amount) {
-    this.id = Operation.id++;
+    this.id = id++;
     this.description = description;
     this.amount = amount;
   }
@@ -96,3 +109,17 @@ class Operation {
 
 // Event listeners
 addBtn.addEventListener('click', addOperation);
+
+document.addEventListener('click', listenDelete);
+
+function listenDelete(e) {
+  if (e.target.classList.contains('close-btn')) {
+    transactions = transactions.filter((transaction) => {
+      return transaction.id !== Number(e.target.parentElement.dataset.id);
+    });
+
+    updateLocalStorage();
+    populateHistory();
+    balanceUpdate();
+  }
+}
