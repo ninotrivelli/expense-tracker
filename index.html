@@ -30,19 +30,8 @@
         </div>
       </div>
 
-      <div class="history-container">
+      <div class="history-container" id="history-container">
         <h2>History</h2>
-        <div class="operation minus" id="operation">
-          <p id="description">PS5</p>
-          <p id="amount">290</p>
-          <div class="close-btn" id="close-btn">X</div>
-        </div>
-
-        <div class="operation plus" id="operation">
-          <p id="description">PS5</p>
-          <p id="amount">290</p>
-          <div class="close-btn" id="close-btn">X</div>
-        </div>
       </div>
 
       <div class="add-transaction-container">
@@ -50,7 +39,11 @@
 
         <div class="form-control">
           <label for="description">Description:</label>
-          <input type="text" placeholder="Enter Description" />
+          <input
+            id="inputDescription"
+            type="text"
+            placeholder="Enter Description"
+          />
         </div>
 
         <div class="form-control">
@@ -59,7 +52,7 @@
             >(negative number: <span class="expense">expense</span>, positive:
             <span class="income">income</span>)</small
           >
-          <input type="number" placeholder="Enter Amount" />
+          <input id="inputAmount" type="number" placeholder="Enter Amount" />
         </div>
 
         <button id="add">Add transaction</button>
