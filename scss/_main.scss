@@ -1,0 +1,115 @@
+.app-container {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 800px;
+}
+
+.balance-container {
+  margin: 0.8rem 0rem;
+  p {
+    font-size: 1.5rem;
+  }
+
+  .balance {
+    font-size: 2rem;
+  }
+}
+
+.amounts-container {
+  display: flex;
+  background: white;
+  justify-content: center;
+  padding: 0.7rem;
+  box-shadow: $soft-shadow;
+  margin: 0.8rem 0rem;
+
+  .amount {
+    padding: 0.8rem;
+    text-align: center;
+    width: 100%;
+
+    &:first-child {
+      border-right: 1px solid rgb(141, 141, 141);
+    }
+
+    .income,
+    .expense {
+      font-size: 1rem;
+    }
+  }
+}
+
+.history-container {
+  margin: 0.8rem 0rem;
+
+  .operation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.4rem;
+    box-shadow: $soft-shadow;
+    margin: 1rem 0rem;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      .close-btn {
+        opacity: 1;
+      }
+    }
+
+    .close-btn {
+      background-color: #dd4d65;
+      position: absolute;
+      left: -25px;
+      color: white;
+      padding: 0.35rem;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+      border-radius: 2px;
+      font-size: 0.7rem;
+
+      &:hover {
+        background-color: #c23950;
+      }
+    }
+
+    &.plus {
+      border-right: 3px solid #6af163;
+    }
+
+    &.minus {
+      border-right: 3px solid #dd4d65;
+    }
+  }
+}
+
+.add-transaction-container {
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 0.8rem 0rem;
+
+    small {
+      font-size: 0.8rem;
+      margin: 0.3rem 0rem;
+      opacity: 0.8;
+    }
+
+    input {
+      outline: none;
+      transition: border 0.125s ease-in-out;
+      &:focus {
+        border: 1px solid rgb(173, 173, 173);
+      }
+    }
+  }
+
+  .add {
+    margin-top: 0.8rem;
+  }
+}
